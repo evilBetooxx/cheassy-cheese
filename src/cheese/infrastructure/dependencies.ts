@@ -7,12 +7,17 @@ import { create } from "../application/use-cases/create";
 import { update } from "../application/use-cases/update";
 import { deleteController } from "./controllers/delete.controller";
 import { Delete } from "../application/use-cases/delete";
+import { getByIdController } from "./controllers/getById.controller";
+import { getById } from "../application/use-cases/getById";
 
 
 const cheeseRepository = new CheeseRepositoryPrisma();
 
 const getByUserCase = new getByUser(cheeseRepository);
 export const GetByUserController = new getController(getByUserCase);
+
+const getByIdCase = new getById(cheeseRepository);
+export const GetByIdController = new getByIdController(getByIdCase);
 
 const createCase = new create(cheeseRepository);
 export const CreateController = new createController(createCase);

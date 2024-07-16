@@ -4,7 +4,7 @@ import CheeseRouter from './cheese/infrastructure/routes';
 import morgan from 'morgan';
 import cors from 'cors';
 
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || 3001;
 const app = express();
 
 app.disable("x-powered-by");
