@@ -7,7 +7,9 @@ export class updateStateController {
   async run(req: Request, res: Response) {
     try {
       const { id } = req.params;
+      console.log(req.body);
       const { state } = req.body;
+      console.log(state);
       const updatedCheese = await this.updateStateCase.run(
         id,
         state,

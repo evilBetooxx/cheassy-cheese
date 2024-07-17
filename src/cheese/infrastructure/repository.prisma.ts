@@ -80,6 +80,26 @@ export class CheeseRepositoryPrisma implements ICheeseRepository {
     );
   }
 
+
+  async updateState(id: string, state: string): Promise<Cheese> {
+    console.log(id, state);
+    const updatedCheese = await this.prisma.cheese.update({
+      where: { id },
+      data: {
+        state: state,
+      },
+    });
+    return new Cheese(
+      updatedCheese.id,
+      updatedCheese.batch,
+      updatedCheese.quantity,
+      updatedCheese.state,
+      updatedCheese.startDate,
+      updatedCheese.endDate,
+      updatedCheese.userId
+    );
+  }
+
   async delete(id: string): Promise<void> {
     await this.prisma.cheese.delete({
       where: { id },
