@@ -17,6 +17,7 @@ app.use(cors({
     origin: "https://zifra.com.mx",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "PREFLIGHT"],
     credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 app.use('/cheese', CheeseRouter);
