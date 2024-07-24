@@ -1,6 +1,6 @@
 import express from 'express';
 import signale from 'signale';
-import CheeseRouter from './cheese/infrastructure/routes';
+import CheeseRouter from './infrastructure/routes';
 import morgan from 'morgan';
 import cors from 'cors';
 import https from 'https';
