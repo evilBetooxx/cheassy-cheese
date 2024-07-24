@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --exec tsx src/index.ts"
+    "dev": "nodemon --exec tsx src/index.ts",
+    "tsc": "tsc",
+    "start": "pm2 start src/index.js"
   },
   "repository": {
     "type": "git",
