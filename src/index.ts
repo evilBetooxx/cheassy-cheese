@@ -23,8 +23,8 @@ app.use(cors({
 app.use('/cheese', CheeseRouter);
 
 const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/tu-dominio.com/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/tu-dominio.com/fullchain.pem')
+    key: fs.readFileSync(String(process.env.SSL_KEY)),
+    cert: fs.readFileSync(String(process.env.SSL_CERT))
 };
 
 https.createServer(options, app).listen(port, () => {
