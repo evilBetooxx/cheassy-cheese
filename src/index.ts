@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://zifra.com.mx",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "PREFLIGHT"],
     credentials: true,
 }));
